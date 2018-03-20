@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ModelForTableCellDelegate: class {
+    func reloadData(data:[DataModel])
+}
+
 class ModelForTableCell {
+    
+    weak var delegate: ModelForTableCellDelegate?
     
     var dataArray: [DataModel]?
     private var lenghtNumbers = 50
@@ -36,6 +42,7 @@ class ModelForTableCell {
                 dataArray?.append(DataModel(text: "", count: n))
             }
         }
+        delegate?.reloadData(data: dataArray!)
         return dataArray!
     }
 }

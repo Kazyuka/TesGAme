@@ -132,11 +132,9 @@ extension TopView: UITextFieldDelegate {
         if text != "" && text != "0" {
             switch textF.tag {
             case 1:
-                modelCell.wir = Int(text)!
-                homeController?.reloadTableView(data: modelCell.dataArray!)
+                homeController?.dataForTableView.wir = Int(text)!
             case 2:
-                modelCell.wor = Int(text)!
-                homeController?.reloadTableView(data: modelCell.dataArray!)
+                homeController?.dataForTableView.wor = Int(text)!
             default:
                 break
             }

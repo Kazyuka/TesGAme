@@ -24,7 +24,9 @@ class HomeController: UIViewController {
     
     func setupView() {
         
+        dataForTableView.delegate = self
         dataArray = dataForTableView.getDataFromModel()
+        
         self.view.addSubview(topView)
         self.view.addSubview(tableView)
         
@@ -83,5 +85,14 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
         return cell!
     }
 }
+
+extension HomeController: ModelForTableCellDelegate {
+    func reloadData(data:[DataModel]) {
+        self.dataArray = data
+        self.tableView.reloadData()
+    }
+}
+
+
 
 
