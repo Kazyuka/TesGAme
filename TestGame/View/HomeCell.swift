@@ -52,9 +52,10 @@ class HomeCell: UITableViewCell {
         numberLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         numberLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         numberLabel.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        numberLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        numberLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -2).isActive = true
         
         wirWarLabel.leftAnchor.constraint(equalTo: self.numberLabel.rightAnchor, constant: 5).isActive = true
+        wirWarLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -2).isActive = true
         wirWarLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         wirWarLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         wirWarLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
